@@ -38,7 +38,6 @@ def cocoSegmentationToPngDemo(dataDir= data_dir, dataTypeAnn='val2017', dataType
     :param isAnnotation: whether the COCO file is a GT annotation or a result file
     :return: None
     '''
-
     # Define paths
     annPath = '%s/annotations/instances_%s.json' % (dataDir, dataTypeAnn)
     if isAnnotation:
