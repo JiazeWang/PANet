@@ -27,7 +27,7 @@ import os
 import uuid
 
 #from pycocotools.cocoeval import COCOeval
-from eval_coco import COCOeval
+from eval_coco.cocoeval import COCOeval
 from core.config import cfg
 from utils.io import save_object
 import utils.boxes as box_utils
