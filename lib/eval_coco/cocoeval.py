@@ -156,6 +156,9 @@ class COCOeval:
                 a = computeIoU(imgId, catId).tostring()
                 IOUSCORE.append(a)
                 print(a)
+        file = open('file_name.txt','w')
+        file.write(str(IOUSCORE))
+        file.close()
         #with open("score.txt", "w") as f:
         #    f.write('\n'.join(IOUSCORE))
         evaluateImg = self.evaluateImg
