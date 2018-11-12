@@ -150,11 +150,13 @@ class COCOeval:
                         for imgId in p.imgIds
                         for catId in catIds}
         print('self.ious',self.ious)
-        fileObject = open('sampleList.txt', 'w')
-        for ip in ipTable:
-	        fileObject.write(ip)
-	        fileObject.write('\n')
-        fileObject.close()
+        IOUSCORE = []
+        for catId in catIds:
+            imgId in p.imgIds:
+                a = computeIoU(imgId, catId)
+                IOUSCORE.append(a)
+        with open("score.txt", "w") as f:
+            f.write('\n'.join(a))
         evaluateImg = self.evaluateImg
         maxDet = p.maxDets[-1]
         self.evalImgs = [evaluateImg(imgId, catId, areaRng, maxDet)
