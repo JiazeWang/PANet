@@ -188,6 +188,7 @@ class COCOeval:
         # compute iou between each dt and gt region
         iscrowd = [int(o['iscrowd']) for o in gt]
         ious = maskUtils.iou(d,g,iscrowd)
+        print('********************',ious,'***********************')
         return ious
 
     def computeOks(self, imgId, catId):
@@ -231,7 +232,6 @@ class COCOeval:
                 if k1 > 0:
                     e=e[vg > 0]
                 ious[i, j] = np.sum(np.exp(-e)) / e.shape[0]
-        print('********************',ious,'***********************')
         return ious
 
     def evaluateImg(self, imgId, catId, aRng, maxDet):
