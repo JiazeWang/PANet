@@ -149,7 +149,12 @@ class COCOeval:
         self.ious = {(imgId, catId): computeIoU(imgId, catId) \
                         for imgId in p.imgIds
                         for catId in catIds}
-
+        print('self.ious',self.ious)
+        fileObject = open('sampleList.txt', 'w')
+        for ip in ipTable:
+	        fileObject.write(ip)
+	        fileObject.write('\n')
+        fileObject.close()
         evaluateImg = self.evaluateImg
         maxDet = p.maxDets[-1]
         self.evalImgs = [evaluateImg(imgId, catId, areaRng, maxDet)
@@ -188,7 +193,7 @@ class COCOeval:
         # compute iou between each dt and gt region
         iscrowd = [int(o['iscrowd']) for o in gt]
         ious = maskUtils.iou(d,g,iscrowd)
-        print('********************',ious,'***********************')
+        #print('********************',ious,'***********************')
         return ious
 
     def computeOks(self, imgId, catId):
