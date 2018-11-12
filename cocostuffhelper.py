@@ -151,7 +151,7 @@ def cocoSegmentationToPng(coco, imgId, pngPath, includeCrowd=False):
 
     # Write to png file
     png = Image.fromarray(labelMap).convert('P')
-    png.putpalette(cmap)
+    png.putpalette(list(cmap))
     png.save(pngPath, format='PNG')
 
 def getCMap(stuffStartId=92, stuffEndId=182, cmapName='jet', addThings=True, addUnlabeled=True, addOther=True):
