@@ -155,7 +155,7 @@ class COCOeval:
             for imgId in p.imgIds:
                 a = (computeIoU(imgId, catId))[0][0]
                 IOUSCORE.append(str(a))
-                print(a)
+                #print(a)
     #    file = open('file_name.txt','w')
     #    file.write(str(IOUSCORE))
     #    file.close()
