@@ -160,7 +160,7 @@ class COCOeval:
     #    file.write(str(IOUSCORE))
     #    file.close()
         with open("score.txt", "w") as f:
-            f.writelines(IOUSCORE)
+            f.writelines('\n'.join(IOUSCORE))
         evaluateImg = self.evaluateImg
         maxDet = p.maxDets[-1]
         self.evalImgs = [evaluateImg(imgId, catId, areaRng, maxDet)
