@@ -21,7 +21,7 @@ __author__ = 'hcaesar'
 
 import os
 from pycocotools import mask
-from pycocotools.cocostuffhelper import cocoSegmentationToPng
+from cocostuffhelper import cocoSegmentationToPng
 from pycocotools.coco import COCO
 import skimage.io
 import matplotlib.pyplot as plt
