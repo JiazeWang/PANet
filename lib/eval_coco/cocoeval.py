@@ -149,14 +149,14 @@ class COCOeval:
         self.ious = {(imgId, catId): computeIoU(imgId, catId) \
                         for imgId in p.imgIds
                         for catId in catIds}
-        print('self.ious',self.ious)
+        #print('self.ious',self.ious)
         IOUSCORE = []
         for catId in catIds:
             for imgId in p.imgIds:
                 a = computeIoU(imgId, catId)
-                IOUSCORE.append(a)
+                IOUSCORE.append(astype(np.int32))
         with open("score.txt", "w") as f:
-            f.write('\n'.join(a))
+            f.write('\n'.join(IOUSCORE))
         evaluateImg = self.evaluateImg
         maxDet = p.maxDets[-1]
         self.evalImgs = [evaluateImg(imgId, catId, areaRng, maxDet)
