@@ -154,7 +154,7 @@ class COCOeval:
         for catId in catIds:
             for imgId in p.imgIds:
                 a = computeIoU(imgId, catId)
-                IOUSCORE.append(astype(np.int32))
+                IOUSCORE.append(a.astype(np.int32))
         with open("score.txt", "w") as f:
             f.write('\n'.join(IOUSCORE))
         evaluateImg = self.evaluateImg
