@@ -162,7 +162,7 @@ def test_net_on_dataset(
     results = task_evaluation.evaluate_all(
         dataset, all_boxes, all_segms, all_keyps, output_dir
     )
-    print('dataset.shape,results.shape',dataset.shape,results.shape)
+    #print('dataset.shape,results.shape',dataset.shape,results.shape)
     return results
 
 
