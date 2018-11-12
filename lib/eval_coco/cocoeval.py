@@ -153,8 +153,7 @@ class COCOeval:
         IOUSCORE = []
         for catId in catIds:
             for imgId in p.imgIds:
-                #a = (computeIoU(imgId, catId))[0][0]
-                a = (computeIoU(imgId, catId))[0]
+                a = (computeIoU(imgId, catId))[0][0]
                 IOUSCORE.append(str(a))
                 #print(a)
     #    file = open('file_name.txt','w')
